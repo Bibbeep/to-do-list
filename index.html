@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+        <title>To-Do List</title>
+    </head>
+    <body>
+        <div class="js-overlay">
+            <div class="js-modal-container"></div>
+        </div>
+
+        <div class="container">
+            <div class="todo-app">
+                <h2>To-Do List</h2>
+
+                <div class="input-row">
+                    <input type="text" id="input-task" class="input-task" placeholder="Type a text here">
+                    <input type="date" id="input-date" class="input-date">
+                    <button id="js-add-todo" class="add-todo-button">Add</button>
+                </div>
+        
+                <div id="list-container" class="list-container"></div>
+            </div>
+            <div id="my-profile"><a href="https://www.linkedin.com/in/muhammad-habib-al-farabi-428262181/" target="_blank">Check me out!</a></div>
+        </div>
+
+        
+        <script src="script.js"></script>
+    </body>
+</html>

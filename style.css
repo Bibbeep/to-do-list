@@ -1,0 +1,301 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "DM Sans", sans-serif;
+    transition: background-color 0.15s;
+}
+
+body {
+    position: relative;
+}
+
+:root {
+    --redColor: #fa7070;
+    --redHover: #d3605f;
+    --redActive: #fe8683;
+    --greyHover: rgb(224, 224, 224);
+    --greyActive: rgb(183, 183, 183);
+    --greenColor: #a1c398;
+    --greenHover: #c6ebc5;
+}
+
+.overlay {
+    z-index: 100;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-container {
+    width: 80%;
+    max-width: 600px;
+    height: 20vh;
+    background-color: white;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    position: relative;
+    user-select: none;
+    text-align: center;
+}
+
+.modal-container span {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    height: 28px;
+    width: 28px;
+    text-align: center;
+    border-radius: 50%;
+    cursor: pointer;
+    user-select: none;
+}
+
+.yes-btn,
+.no-btn {
+    border: none;
+    outline: none;
+    color: white;
+    font-weight: bold;
+    padding: 8px 16px;
+    border-radius: 20px;
+    position: absolute;
+    bottom: 10px;
+    cursor: pointer;
+}
+
+.yes-btn {
+    background-color: var(--greenColor);
+    left: calc(50% - 60px);
+}
+
+.yes-btn:hover {
+    background-color: var(--greenHover);
+}
+
+.yes-btn:active {
+    background-color: var(--greenColor);
+}
+
+.no-btn {
+    background-color: var(--redColor);
+    right: calc(50% - 60px);
+}
+
+.container {
+    background: #E1F0DA;
+    width: 100%;
+    min-height: 100vh;
+    margin: 0;
+    padding: 10px;
+    position: relative;
+}
+
+.todo-app {
+    background: #fefded;
+    width: 100%;
+    max-width: 600px;
+    border-radius: 10px;
+    margin: 30px auto 60px;
+    padding: 20px 30px;
+    border: 1px solid grey;
+}
+
+.todo-app h2 {
+    margin: 15px 10px 20px;
+    user-select: none;
+}
+
+.input-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.input-task,
+.input-date,
+.add-todo-button {
+    padding: 20px 30px 20px;
+    outline: none;
+    background-color: white;
+    border-radius: 20px;
+    height: 60px;
+    border: none;
+    outline: none;
+}
+
+.input-task {
+    font-size: 16px;
+    flex: 8;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    padding-right: 5px;
+}
+
+.input-date {
+    border-radius: 0;
+    font-weight: bold;
+    padding-left: 10px;
+    padding-right: 10px;
+    cursor: pointer;
+    position: relative;
+}
+
+.input-date::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+}
+
+.input-date:hover,
+.modal-container span:hover,
+.delete-btn:hover {
+    background-color: var(--greyHover);
+}
+
+.input-date:active,
+.modal-container span:active,
+.delete-btn:active {
+    background-color: var(--greyActive);
+}
+
+.add-todo-button {
+    color: white;
+    background-color: var(--redColor);
+    flex: 1;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.add-todo-button:hover {
+    background-color: var(--redHover);
+}
+
+.add-todo-button:active {
+    background-color: var(--redActive);
+}
+
+.reset-row {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 10px 0px 5px 20px;
+}
+
+.reset-btn {
+    background-color: var(--redColor);
+    border: none;
+    outline: none;
+    padding: 4px 10px;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    font-size: 12px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.reset-btn:hover,
+.no-btn:hover {
+    background-color: var(--redHover);
+}
+
+.reset-btn:active,
+.no-btn:active {
+    background-color: var(--redActive);
+}
+
+.row-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding: 8px 10px 28px 16px;
+    margin-bottom: 10px;
+    background-color: white;
+    border: 1px solid grey;
+    border-radius: 5px;
+}
+
+.delete-btn {
+    font-size: 20px;
+    height: 28px;
+    width: 28px;
+    text-align: center;
+    border-radius: 50%;
+    cursor: pointer;
+    user-select: none;
+    border: none;
+    outline: none;
+    background-color: white;
+}
+
+.task {
+    margin-left: 28px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.task::before {
+    content: '';
+    background-image: url(icons/blank-check-box.png);
+    background-position: center;
+    background-size: cover;
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    top: calc(50% - 12px);
+    left: 10px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.task-checked {
+    color: #555;
+    text-decoration: line-through;
+}
+
+.task-checked::before {
+    background-image: url(icons/check-box.png);
+}
+
+.due-date {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: 8px;
+    color: var(--greenColor);
+    font-weight: 500;
+    font-size: 14px;
+    margin-left: 28px;
+}
+
+.alarm-icon {
+    height: 16px;
+    margin-right: 4px;
+}
+
+#my-profile {
+    position: absolute;
+    bottom: 0;
+    left: calc(50% - 107.74px / 2);
+    max-width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#my-profile a {
+    text-decoration: none;
+    user-select: none;
+}
